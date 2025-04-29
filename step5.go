@@ -1,3 +1,11 @@
+//double demo
+
+// Install Libs:
+
+//go mod tidy
+// go mod init runtimeviz
+//go get gonum.org/v1/plot/...
+
 package main
 
 import (
@@ -9,6 +17,7 @@ import (
 
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/plotutil"
 	"gonum.org/v1/plot/vg"
 )
 
@@ -76,7 +85,7 @@ func makeBarChart(gTimes, pTimes []float64) error {
 		return err
 	}
 	barChart.LineStyle.Width = vg.Length(0)
-	barChart.Color = plotter.DefaultColors[1]
+	barChart.Color = plotutil.Color(1)
 
 	p.Add(barChart)
 	p.NominalX(genLabels(n)...)
