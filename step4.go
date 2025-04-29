@@ -31,7 +31,8 @@ func runProcess(id int, wg *sync.WaitGroup) {
 
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	numTasks := 4
+	//runtime.GOMAXPROCS(200)
+	numTasks := 5
 
 	fmt.Println("=== Running Multithreading with Goroutines ===")
 	var wg1 sync.WaitGroup

@@ -13,8 +13,13 @@ if __name__ == "__main__":
     p2 = multiprocessing.Process(target=task, args=("B",))
 
     p1.start()
+    end = time.time()
+    print(f"Total time: {end - start:.2f} seconds")
+    
     p2.start()
-
+    end = time.time()
+    print(f"Total time: {end - start:.2f} seconds")
+    
     p1.join()
     p2.join()
 
